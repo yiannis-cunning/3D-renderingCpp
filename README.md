@@ -26,7 +26,7 @@ the image to the screen.
 The demo/exe file is in the repository, or the code can be downloaded and complied by itself.
 
 
-Why cpp?
+# Why cpp?
 
 In this project I tried to write code at the most basic level possible, and from as scratch as possible and tried to build up
 everything just from the basic windows c libraries. Of course, there are probably many better ways to try and create a 
