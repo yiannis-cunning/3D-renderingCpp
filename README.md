@@ -1,7 +1,9 @@
 # 3D-renderingCpp
 
 main file: shell
+
 most window functionality: ChildWindow
+
 rest of objects/classes used: libs folder
 
 
