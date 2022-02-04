@@ -2,7 +2,7 @@
 
 // -lstdc++
 // gcc ShellWindow.cpp ChildWindow.cpp shell.cpp -ld2d1 -lgdi32 -lstdc++ -o run
-// gcc *.cpp -ld2d1 -lgdi32 -lstdc++ -o run
+// gcc *.cpp libs\*.cpp -ld2d1 -lgdi32 -lstdc++ -o run
 
 // Windows initialzation
 //
