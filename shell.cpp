@@ -41,9 +41,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		TranslateMessage(&msg);
 		DispatchMessage(&msg);
 		
-		if(i == 1){
+		if(i == 10){
 			i = 0;
-			theta = theta += 0.01;
+			theta = theta += 0.1;
 			setVector(v, r*cos(theta),r*sin(theta),r*cos(theta));
 			canvas.changelens(v);
 		}
