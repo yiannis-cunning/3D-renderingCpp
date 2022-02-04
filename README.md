@@ -25,6 +25,9 @@ the image to the screen.
 
 The demo/exe file is in the repository, or the code can be downloaded and complied by itself.
 
+
+Why cpp?
+
 In this project I tried to write code at the most basic level possible, and from as scratch as possible and tried to build up
 everything just from the basic windows c libraries. Of course, there are probably many better ways to try and create a 
 3d-renderer and probably many better languages to do it in but the main purpose of this project was trying to do it all from
