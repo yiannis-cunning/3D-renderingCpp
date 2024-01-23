@@ -1,4 +1,5 @@
 #include "windClass.h"
+#include <sys\timeb.h> 
 
 // -lstdc++
 // gcc ShellWindow.cpp ChildWindow.cpp shell.cpp -ld2d1 -lgdi32 -lstdc++ -o run
@@ -36,18 +37,31 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	setVector(v, r*cos(theta),r*sin(theta),r*cos(theta));
 	canvas.changelens(v);
 	
+	struct timeb start, end;
+	int diff;
+	float dt;
+	float avg_sum;
+	int samples;
+
+
 	MSG msg = {};
 	while(GetMessage(&msg, NULL, 0, 0)){
 		TranslateMessage(&msg);
 		DispatchMessage(&msg);
 		
-		if(i == 10){
-			i = 0;
-			theta = theta += 0.1;
-			setVector(v, r*cos(theta),r*sin(theta),r*cos(theta));
-			canvas.changelens(v);
-		}
-		i++;
+
+		ftime(&start);
+
+		theta = theta += 0.1;
+		setVector(v, r*cos(theta),r*sin(theta),r*cos(theta));
+		canvas.changelens(v);
+
+		ftime(&end);
+		dt = (float) (1000.0 * (end.time - start.time) + (end.millitm - start.millitm));
+		avg_sum += (1000/((float)dt));
+		samples += 1;
+		printf("\r Frame per second: %f. Average: %f", (1000/((float)dt)), avg_sum/samples);
+		
 	}
 	
     	return 0;
